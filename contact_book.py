@@ -18,9 +18,11 @@ def search_contact(name):
     else:
         return None
         
-# #Implement a delete_contact(name) function that removes a contact by name
-# def delete_contact(name):
-#     delete_name = input("Enter the name of the contact you would like to delete: ").strip().lower()
+#Implement a delete_contact(name) function that removes a contact by name
+def delete_contact(name):
+    for deleted_contact in contacts:
+        if deleted_contact["name"] == name:
+            contacts.remove(deleted_contact)
 
 #Implement a view_all() function that displays all contacts in a formatted layout
 def view_all():
@@ -28,7 +30,7 @@ def view_all():
         for key, value in contact_list.items():
             print(key, value)
 
-# # #Use a while loop menu to let the user choose an action (1=Add, 2=Search, 3=Delete, 4=View All, 5=Exit)
+#Use a while loop menu to let the user choose an action (1=Add, 2=Search, 3=Delete, 4=View All, 5=Exit)
 while True:
     action = int(input("Please select an option below: \n1. Add \n2. Search \n3. Delete \n4. View All \n5. Exit \n").strip())
     if action == 1:
