@@ -31,5 +31,9 @@ for student in students:
     for result in student:
         results = [{'name': student['name'], 'average': average, 'grade': grade, 'status': status}]
 
-
-    print(results)
+#Calculate: class average, highest mark, lowest mark
+total = 0
+for performance in students:
+    total += (performance['math'] + performance['physics'] + performance['setswana'])
+class_average = total / (len(students) * 3)
+print(class_average)
