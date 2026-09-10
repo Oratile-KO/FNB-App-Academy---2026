@@ -28,7 +28,7 @@ else:
 #Flag any individual subject mark below 40 as ‘needs intervention’
 needs_intervention = [] #Create a list to store the subjects that need intervention
 
-#Add subject to the list if markk if below 40
+#Add subject to the list if mark if below 40
 if math_mark < 40:
     needs_intervention.append("Math")
 if physics_mark < 40: 
@@ -54,9 +54,9 @@ while j <= 30:
 print(f"\nNAME: \t\t{name}")
 print(f"MATH MARK: \t\t{math_mark}")
 print(f"PHYSICS MARK: \t\t{physics_mark}")
-print(f"SETSWANA MMARK: \t{setswana_mark}")
+print(f"SETSWANA MARK: \t{setswana_mark}")
 print(f"AVERAGE: \t\t{average}")
-print(f"GRADE: \t\t{grade}")
+print(f"GRADE: \t\t\t{grade}")
 print(f"STATUS: \t\t{status}")
 print(*needs_intervention[:-1], sep=", ", end=", ")
 print(needs_intervention[-1], "need intervention")
