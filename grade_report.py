@@ -29,22 +29,14 @@ for student in students:
         status = "Pass"
     else:
         status = "Fail"
+
     #Build a results list of dictionaries containing: name, average, grade, status
     result = {'name': student['name'], 'average': average, 'grade': grade, 'status': status}
     results.append(result)
-print(results)
 
 #Calculate: class average, highest mark, lowest mark
-# total = 0
-# for performance in students:
-#     total += (performance['math'] + performance['physics'] + performance['setswana'])
-# class_average = total / (len(students) * 3)
-
-# #Calculate: class highest mark
-# for highest in students:
-#     marks = [highest['math'],
-#              highest['physics'],
-#              highest['setswana']]
-#     #print(marks)
-#     print(max(marks['math']))
-#     # print(f"The highest math mark is {max(highest['math'])}")
+total = 0
+for performance in results:
+    total += performance['average']
+class_average = total / len(students)
+print(round(class_average, 2))
