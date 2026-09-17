@@ -6,6 +6,8 @@ students = [{'name': 'Mosa', "math": 23, 'physics': 45, 'setswana': 76},
            {'name': 'Sunflower', "math": 87, 'physics': 37, 'setswana': 76},
            {'name': 'Kat', "math": 45, 'physics': 76, 'setswana': 67}]
 
+results =  []
+
 #Use a for loop to iterate over all students and calculate each student’s average
 for student in students:
     average = (student['math'] + student['physics'] + student['setswana']) / 3
@@ -16,7 +18,7 @@ for student in students:
     elif average > 69:
         grade = 'B'
     elif average > 59:
-        grade = 'c'
+        grade = 'C'
     elif average > 49:
         grade = 'D'
     else: 
@@ -28,12 +30,21 @@ for student in students:
     else:
         status = "Fail"
     #Build a results list of dictionaries containing: name, average, grade, status
-    for result in student:
-        results = [{'name': student['name'], 'average': average, 'grade': grade, 'status': status}]
+    result = {'name': student['name'], 'average': average, 'grade': grade, 'status': status}
+    results.append(result)
+print(results)
 
 #Calculate: class average, highest mark, lowest mark
-total = 0
-for performance in students:
-    total += (performance['math'] + performance['physics'] + performance['setswana'])
-class_average = total / (len(students) * 3)
-print(class_average)
+# total = 0
+# for performance in students:
+#     total += (performance['math'] + performance['physics'] + performance['setswana'])
+# class_average = total / (len(students) * 3)
+
+# #Calculate: class highest mark
+# for highest in students:
+#     marks = [highest['math'],
+#              highest['physics'],
+#              highest['setswana']]
+#     #print(marks)
+#     print(max(marks['math']))
+#     # print(f"The highest math mark is {max(highest['math'])}")
