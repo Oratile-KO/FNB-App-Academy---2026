@@ -1,4 +1,4 @@
-#Create a lisst of dictionaries for 5 students with name and marks for three subjects
+#Create a list of dictionaries for 5 students with name and marks for three subjects
 students = [{'name': 'Mosa', "math": 23, 'physics': 45, 'setswana': 76},
            {'name': 'Sli', "math": 18, 'physics': 78, 'setswana': 37},
            {'name': 'Thando', "math": 87, 'physics': 45, 'setswana': 92},
@@ -63,11 +63,16 @@ j = 0
 while j <= 60:
     print("*", end='')
     j += 1
-for report in students:
-    print(f"\n{report['name']}:")
-    print(f"\tMATH:\t\t {report['math']}")
-    print(f"\tPHYSICS:\t {report['physics']}")
-    print(f"\tSETSWANA:\t {report['setswana']}")
+for student_report in students:
+    for results_report in results:
+        if student_report['name'] == results_report['name']:
+            print(f"\n{student_report['name']}:")
+            print(f"\tMATH:\t\t {student_report['math']}")
+            print(f"\tPHYSICS:\t {student_report['physics']}")
+            print(f"\tSETSWANA:\t {student_report['setswana']}")
+            print(f"\tAVERAGE:\t {results_report['average']}")
+            print(f"\tGRADE:\t\t {results_report['grade']}")
+            print(f"\tSTATUS:\t\t {results_report['status']}")
 
 x = 0
 while x <= 60:
