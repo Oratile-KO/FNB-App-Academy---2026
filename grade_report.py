@@ -4,7 +4,7 @@ students = [{'name': 'Mosa', "math": 23, 'physics': 45, 'setswana': 76},
            {'name': 'Thando', "math": 87, 'physics': 45, 'setswana': 92},
            {'name': 'Lisa', "math": 36, 'physics': 98, 'setswana': 45},
            {'name': 'Sunflower', "math": 87, 'physics': 37, 'setswana': 76},
-           {'name': 'Kat', "math": 45, 'physics': 76, 'setswana': 67}]
+           {'name': 'Kat', "math": 15, 'physics': 76, 'setswana': 67}]
 
 results =  []
 
@@ -39,4 +39,14 @@ total = 0
 for performance in results:
     total += performance['average']
 class_average = total / len(students)
-print(round(class_average, 2))
+
+#Calculate: highest mark, lowest mark
+highest = students[0]
+lowest = students[0]
+
+for learner in students:
+    if learner["math"] > highest["math"]:
+        highest = learner
+
+    if learner["math"] < lowest["math"]:
+        lowest = learner   
