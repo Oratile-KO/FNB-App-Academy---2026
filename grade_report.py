@@ -45,8 +45,31 @@ highest = students[0]
 lowest = students[0]
 
 for learner in students:
-    if learner["math"] > highest["math"]:
+    if learner['math'] > highest['math']:
         highest = learner
 
-    if learner["math"] < lowest["math"]:
+    if learner['math'] < lowest['math']:
         lowest = learner   
+
+#Display a formatted class report showing individual results and class statistics
+i = 0
+while i <= 60:
+    print("*", end='')
+    i += 1
+
+print(f"\n\t\t\tCLASS REPORT")
+
+j = 0
+while j <= 60:
+    print("*", end='')
+    j += 1
+for report in students:
+    print(f"\n{report['name']}:")
+    print(f"\tMATH:\t\t {report['math']}")
+    print(f"\tPHYSICS:\t {report['physics']}")
+    print(f"\tSETSWANA:\t {report['setswana']}")
+
+x = 0
+while x <= 60:
+    print("*", end='')
+    x += 1
