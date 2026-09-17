@@ -1,7 +1,7 @@
 #Create a list of dictionaries for 5 students with name and marks for three subjects
-students = [{'name': 'Mosa', "math": 23, 'physics': 45, 'setswana': 76},
-           {'name': 'Sli', "math": 18, 'physics': 78, 'setswana': 37},
-           {'name': 'Thando', "math": 87, 'physics': 45, 'setswana': 92},
+students = [{'name': 'Mosa', "math": 23, 'physics': 99, 'setswana': 76},
+           {'name': 'Sli', "math": 18, 'physics': 78, 'setswana': 38},
+           {'name': 'Thando', "math": 89, 'physics': 45, 'setswana': 92},
            {'name': 'Lisa', "math": 36, 'physics': 98, 'setswana': 45},
            {'name': 'Sunflower', "math": 87, 'physics': 37, 'setswana': 76},
            {'name': 'Kat', "math": 15, 'physics': 76, 'setswana': 67}]
@@ -41,15 +41,33 @@ for performance in results:
 class_average = total / len(students)
 
 #Calculate: highest mark, lowest mark
-highest = students[0]
-lowest = students[0]
+highest_math = students[0]
+lowest_math = students[0]
+
+highest_physics = students[0]
+lowest_physics = students[0]
+
+highest_setswana = students[0]
+lowest_setswana = students[0]
 
 for learner in students:
-    if learner['math'] > highest['math']:
-        highest = learner
+    if learner['math'] > highest_math['math']:
+        highest_math = learner
 
-    if learner['math'] < lowest['math']:
-        lowest = learner   
+    if learner['physics'] > highest_physics['physics']:
+        highest_physics =  learner
+
+    if learner['setswana'] > highest_setswana['setswana']:
+        highest_setswana =  learner
+
+    if learner['math'] < lowest_math['math']:
+        lowest_math = learner  
+
+    if learner['physics'] < lowest_physics['physics']:
+        lowest_physics = learner
+
+    if learner['setswana'] < lowest_setswana['setswana']:
+        lowest_setswana = learner
 
 #Display a formatted class report showing individual results and class statistics
 i = 0
@@ -57,7 +75,7 @@ while i <= 60:
     print("*", end='')
     i += 1
 
-print(f"\n\t\t\tCLASS REPORT")
+print(f"\n\t\t\tINDIVIDUAL REPORT")
 
 j = 0
 while j <= 60:
@@ -78,3 +96,18 @@ x = 0
 while x <= 60:
     print("*", end='')
     x += 1
+
+print(f"\n\t\t\tCLASS REPORT")
+
+l = 0
+while l <= 60:
+    print("*", end='')
+    l += 1
+
+print(f"\nCLASS AVERAGE: {class_average}")
+print(f"HIGHEST MATH MARK: {highest_math['name']} by {highest_math['math']}")
+print(f"HIGHEST PHYSICS MARK: {highest_physics['name']} by {highest_physics['physics']}")
+print(f"HIGHEST SETSWANA MARK: {highest_setswana['name']} by {highest_setswana['setswana']}")
+print(f"LOWEST MATH MARK: {lowest_math['name']} by {lowest_math['math']}")
+print(f"LOWEST PHYSICS MARK: {lowest_physics['name']} by {lowest_physics['physics']}")
+print(f"LOWEST SETSWANA MARK:{lowest_setswana['name']} by {lowest_setswana['setswana']}")
