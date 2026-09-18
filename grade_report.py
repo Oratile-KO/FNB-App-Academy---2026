@@ -71,7 +71,7 @@ for learner in students:
 
 #Display a formatted class report showing individual results and class statistics
 i = 0
-while i <= 60:
+while i < 60:
     print("*", end='')
     i += 1
 
@@ -93,14 +93,14 @@ for student_report in students:
             print(f"\tSTATUS:\t\t {results_report['status']}")
 
 x = 0
-while x <= 60:
+while x < 60:
     print("*", end='')
     x += 1
 
 print(f"\n\t\t\tCLASS REPORT")
 
 l = 0
-while l <= 60:
+while l < 60:
     print("*", end='')
     l += 1
 
@@ -111,3 +111,25 @@ print(f"HIGHEST SETSWANA MARK: {highest_setswana['name']} by {highest_setswana['
 print(f"LOWEST MATH MARK: {lowest_math['name']} by {lowest_math['math']}")
 print(f"LOWEST PHYSICS MARK: {lowest_physics['name']} by {lowest_physics['physics']}")
 print(f"LOWEST SETSWANA MARK:{lowest_setswana['name']} by {lowest_setswana['setswana']}")
+
+k = 0
+while k < 60:
+    print("*", end='')
+    k += 1
+
+#let the user search for a student by name after the report is shown
+while True:
+    search_name = input("\nEnter the name of the student you want to search: ").strip().capitalize()
+    for student_report in students:
+        for results_report in results:
+            if student_report['name'] == search_name and  results_report['name'] == search_name:
+                print(f"\n{student_report['name']}:")
+                print(f"\tMATH:\t\t {student_report['math']}")
+                print(f"\tPHYSICS:\t {student_report['physics']}")
+                print(f"\tSETSWANA:\t {student_report['setswana']}")
+                print(f"\tAVERAGE:\t {results_report['average']}")
+                print(f"\tGRADE:\t\t {results_report['grade']}")
+                print(f"\tSTATUS:\t\t {results_report['status']}")
+                break
+    if search_name == "Stop":
+        break
